@@ -1,5 +1,5 @@
 import './App.css';
-import { useEffect, useState, state } from 'react';
+import { useEffect, useState} from 'react';
 import axios from 'axios';
 const api = "https://jsonplaceholder.typicode.com/posts";
 
@@ -23,22 +23,18 @@ useEffect(() => {
       <table>
         <thead>
         <tr>
-            <td>Hallo</td>
-            <td>Guys</td>
+            <td>Id</td>
+            <td>Title</td>
+            <td>Body</td>
             </tr>
         </thead>
       <tbody>
-      {data && Object.keys(data).map((item) => (
-             <tr>
-              <td>{item.userId}</td>
-              <td>{item.id}</td>
-              <td>{item.title}</td>
+      {data && data.map((item) => (
+              <tr key={item.userId}>
+                <td>{item.id}</td>
+                <td>{item.title}</td>
+                <td>{item.body}</td>
              </tr>
-             
-            //  <td>{(data.id[key])}</td>
-            //  <td>{(data.title[key])}</td>
-            //  <td>{(data.body[key])}</td> */}
-            // </tr>
         ))}
          </tbody>
       </table>
